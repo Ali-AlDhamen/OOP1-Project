@@ -45,7 +45,7 @@ public class Authentication
         {
             if (user.getUsername().equals(username) && user.getPassword().equals(password))
             {
-                System.out.println("Login successful");
+                System.out.println(ConsoleColors.GREEN + "logged in successfully" + ConsoleColors.RESET);
                 Main.currentUser = user;
                 return;
             }

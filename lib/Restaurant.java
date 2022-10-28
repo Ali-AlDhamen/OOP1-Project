@@ -15,7 +15,7 @@ public class Restaurant
     {
         if (menu.size() == 0)
         {
-            System.out.println(ConsoleColors.RED + "There`s not items in the menu" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.RED + "There`s no items in the menu" + ConsoleColors.RESET);
             return;
         }
         int counter = 1;
@@ -94,7 +94,7 @@ public class Restaurant
     {
         if (Main.customers.size() == 0)
         {
-            System.out.println("There`s no customers yet");
+            System.out.println(ConsoleColors.RED + "There`s no customers yet" + ConsoleColors.RESET);
             return;
         }
         System.out.println("-------------------------------------------------------");
