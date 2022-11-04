@@ -10,11 +10,11 @@ import java.util.Scanner;
 
 public class Database
 {
-    static void saveIdNumbers()
+    public static void saveIdNumbers()
     {
         try
         {
-            FileWriter myWriter = new FileWriter("idNumbers.txt");
+            FileWriter myWriter = new FileWriter("data/idNumbers.txt");
             myWriter.write(String.valueOf(User.idNumber) + "," + String.valueOf(Order.idNumber));
             myWriter.close();
 
@@ -27,11 +27,11 @@ public class Database
 
     }
 
-    static void saveOrders()
+    public static void saveOrders()
     {
         try
         {
-            FileOutputStream writeData = new FileOutputStream("orders.ser");
+            FileOutputStream writeData = new FileOutputStream("data/orders.ser");
             ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
 
             writeStream.writeObject(Restaurant.orders);
@@ -46,11 +46,11 @@ public class Database
 
     }
 
-    static void saveMenu()
+    public static void saveMenu()
     {
         try
         {
-            FileOutputStream writeData = new FileOutputStream("menu.ser");
+            FileOutputStream writeData = new FileOutputStream("data/menu.ser");
             ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
 
             writeStream.writeObject(Restaurant.menu);
@@ -65,11 +65,11 @@ public class Database
 
     }
 
-    static void saveAccounts()
+    public static void saveAccounts()
     {
         try
         {
-            FileOutputStream writeData = new FileOutputStream("peopledata.ser");
+            FileOutputStream writeData = new FileOutputStream("data/peopledata.ser");
             ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
 
             writeStream.writeObject(Main.allUsers);
@@ -84,11 +84,11 @@ public class Database
 
     }
 
-    static void getOrders()
+    public static void getOrders()
     {
         try
         {
-            FileInputStream readData = new FileInputStream("orders.ser");
+            FileInputStream readData = new FileInputStream("data/orders.ser");
             ObjectInputStream readStream = new ObjectInputStream(readData);
 
             Restaurant.orders = (ArrayList<Order>) readStream.readObject();
@@ -102,11 +102,11 @@ public class Database
 
     }
 
-    static void getMenu()
+    public static void getMenu()
     {
         try
         {
-            FileInputStream readData = new FileInputStream("menu.ser");
+            FileInputStream readData = new FileInputStream("data/menu.ser");
             ObjectInputStream readStream = new ObjectInputStream(readData);
 
             Restaurant.menu = (ArrayList<MenuItem>) readStream.readObject();
@@ -120,11 +120,11 @@ public class Database
 
     }
 
-    static void getAccounts()
+    public static void getAccounts()
     {
         try
         {
-            FileInputStream readData = new FileInputStream("peopledata.ser");
+            FileInputStream readData = new FileInputStream("data/peopledata.ser");
             ObjectInputStream readStream = new ObjectInputStream(readData);
 
             Main.allUsers = (ArrayList<User>) readStream.readObject();
@@ -138,12 +138,12 @@ public class Database
 
     }
 
-    static void getIdNumbers()
+    public static void getIdNumbers()
     {
         String data = "";
         try
         {
-            File myObj = new File("idNumbers.txt");
+            File myObj = new File("data/idNumbers.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine())
             {

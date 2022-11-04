@@ -1,6 +1,7 @@
 package lib;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main
@@ -13,13 +14,25 @@ public class Main
 
     public static void main(String[] args)
     {
+
         Sys.runApp();
         do
         {
-            System.out.println("******* Welcome to the " + Restaurant.restaurantName + " ********");
-            System.out.println("1. Login\n2. Create Account\n3. Exit");
-            System.out.print(ConsoleColors.PURPLE + "Enter your choice: " + ConsoleColors.RESET);
-            int inputChoice = input.nextInt();
+            int inputChoice;
+            try
+            {
+                System.out.println(ConsoleColors.BLUE + "******* Welcome to the " + Restaurant.restaurantName + " ********" + ConsoleColors.RESET);
+                System.out.println("1. Login\n2. Create Account\n3. Exit");
+                System.out.print(ConsoleColors.PURPLE + "Enter your choice: " + ConsoleColors.RESET);
+                inputChoice = input.nextInt();
+            }
+            catch (InputMismatchException e)
+            {
+                System.out.println(ConsoleColors.RED + "Please Enter a Number!" + ConsoleColors.RESET);
+                input.nextLine();
+                continue;
+            }
+
             switch (inputChoice)
             {
                 case 1:

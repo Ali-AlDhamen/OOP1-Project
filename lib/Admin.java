@@ -1,5 +1,6 @@
 package lib;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Admin extends User
@@ -13,11 +14,21 @@ public class Admin extends User
 
     void addNewDish()
     {
-        System.out.println("-------------------------------------------------------------");
+        System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.print("Enter Dish name: ");
         String name = input.nextLine();
-        System.out.print("Enter " + name + " price: ");
-        double price = input.nextDouble();
+        double price;
+        try
+        {
+            System.out.print("Enter " + name + " price: ");
+            price = input.nextDouble();
+        }
+        catch (InputMismatchException e)
+        {
+            System.out.println(ConsoleColors.RED + "Please Enter a Number!" + ConsoleColors.RESET);
+            input.nextLine();
+            return;
+        }
         input.nextLine();
         if (price < 0)
         {
@@ -41,13 +52,25 @@ public class Admin extends User
 
     void updateDish()
     {
-        System.out.println("-------------------------------------------------------------");
+        System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Update Dish: ");
         System.out.print("Enter Dish name: ");
         String name = input.nextLine();
-        System.out.println("1. Update name\n2. Update price");
-        System.out.print(ConsoleColors.PURPLE + "Enter your choice: " + ConsoleColors.RESET);
-        int choice = input.nextInt();
+        int choice;
+        double newPrice;
+        try
+        {
+            System.out.println("1. Update name\n2. Update price");
+            System.out.print(ConsoleColors.PURPLE + "Enter your choice: " + ConsoleColors.RESET);
+            choice = input.nextInt();
+        }
+        catch (InputMismatchException e)
+        {
+            System.out.println(ConsoleColors.RED + "Please Enter a Number!" + ConsoleColors.RESET);
+            input.nextLine();
+            return;
+
+        }
         input.nextLine();
         if (choice == 1)
         {
@@ -67,8 +90,17 @@ public class Admin extends User
         }
         else if (choice == 2)
         {
-            System.out.print("Enter new price: ");
-            double newPrice = input.nextDouble();
+            try
+            {
+                System.out.print("Enter new price: ");
+                newPrice = input.nextDouble();
+            }
+            catch (InputMismatchException e)
+            {
+                System.out.println(ConsoleColors.RED + "Please Enter a Number!" + ConsoleColors.RESET);
+                input.nextLine();
+                return;
+            }
             input.nextLine();
             if (newPrice < 0)
             {
@@ -96,7 +128,7 @@ public class Admin extends User
 
     void removeDish()
     {
-        System.out.println("-------------------------------------------------------------");
+        System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Delete Dish: ");
         System.out.print("Enter Dish name: ");
         String name = input.nextLine();
@@ -116,7 +148,7 @@ public class Admin extends User
 
     void changeRestaurantName()
     {
-        System.out.println("-------------------------------------------------------------");
+        System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.print("Enter new name: ");
         String newName = input.nextLine();
         Restaurant.restaurantName = newName;

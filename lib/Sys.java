@@ -1,5 +1,6 @@
 package lib;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Sys
@@ -8,7 +9,7 @@ public class Sys
 
     static public void runApp()
     {
-        Audio.playAudio("/Users/alidhamen/Downloads/AOT.wav");
+        Audio.playAudio("/Users/alidhamen/CS321/data/backGroundMusic.wav");
         Database.getAccounts();
         Database.getIdNumbers();
         Database.getMenu();
@@ -25,13 +26,23 @@ public class Sys
     static public void customerSystem()
     {
 
-        System.out.println("-------------------------------------------------------------");
+        System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Welcome to the customer system!");
         while (true)
         {
-            System.out.println("1. Order\n2. View Orders\n3. View Profile\n4. Update Profile\n5. Logout");
-            System.out.print(ConsoleColors.PURPLE + "Enter your choice: " + ConsoleColors.RESET);
-            int inputChoice = input.nextInt();
+            int inputChoice;
+            try
+            {
+                System.out.println("1. Order\n2. View Orders\n3. View Profile\n4. Update Profile\n5. Logout");
+                System.out.print(ConsoleColors.PURPLE + "Enter your choice: " + ConsoleColors.RESET);
+                inputChoice = input.nextInt();
+            }
+            catch (InputMismatchException e)
+            {
+                System.out.println(ConsoleColors.RED + "Please Enter a Number!" + ConsoleColors.RESET);
+                input.nextLine();
+                continue;
+            }
             switch (inputChoice)
             {
                 case 1:
@@ -59,15 +70,24 @@ public class Sys
 
     static public void adminSystem()
     {
-        System.out.println("-------------------------------------------------------------");
+        System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Welcome to the admin system!");
         while (true)
         {
-
-            System.out.println(
-                    "1. Add Food\n2. Remove Food\n3. Update Food\n4. Update information\n5. Update Restaurant Name\n6. View Orders\n7. View Customers\n8. display menu\n9. Account Info\n10. Updated Profile\n11. Logout");
-            System.out.print(ConsoleColors.PURPLE + "Enter your choice: " + ConsoleColors.RESET);
-            int choice = input.nextInt();
+            int choice;
+            try
+            {
+                System.out.println(
+                        "1. Add Food\n2. Remove Food\n3. Update Food\n4. Update information\n5. Update Restaurant Name\n6. View Orders\n7. View Customers\n8. display menu\n9. Account Info\n10. Updated Profile\n11. Logout");
+                System.out.print(ConsoleColors.PURPLE + "Enter your choice: " + ConsoleColors.RESET);
+                choice = input.nextInt();
+            }
+            catch (InputMismatchException e)
+            {
+                System.out.println(ConsoleColors.RED + "Please Enter a Number!" + ConsoleColors.RESET);
+                input.nextLine();
+                continue;
+            }
             input.nextLine();
             switch (choice)
             {

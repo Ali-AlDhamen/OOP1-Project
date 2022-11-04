@@ -54,10 +54,10 @@ abstract public class User implements Serializable
 
     void accountInfo()
     {
-        System.out.println("-------------------------------------------------------------");
+        System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Account Info: ");
         System.out.println("Username: " + this.username);
         System.out.println("Password: " + this.password);
-        System.out.println("-------------------------------------------------------------");
+        System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
     }
 }

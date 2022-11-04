@@ -2,7 +2,7 @@ package lib;
 
 public class Bill
 {
-    static void displayBill(Order order)
+    public static void displayBill(Order order)
     {
         System.out.println("-------------------------------------------------------");
         System.out.println("| Order ID:  " + order.getOrderId() + "                                        |");
@@ -26,7 +26,7 @@ public class Bill
 
     }
 
-    static double calculateBill(Order order)
+    public static double calculateBill(Order order)
     {
         double total = 0;
         for (Dish dish : order.Cart)

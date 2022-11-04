@@ -1,5 +1,6 @@
 package lib;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Authentication
@@ -8,7 +9,7 @@ public class Authentication
 
     static void createAccount()
     {
-        System.out.println("-------------------------------------------------------------");
+        System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Create Account: ");
         System.out.print("Enter username: ");
         String username = input.nextLine();
@@ -35,7 +36,7 @@ public class Authentication
 
     static void login()
     {
-        System.out.println("-------------------------------------------------------------");
+        System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Login: ");
         System.out.print("Enter username: ");
         String username = input.nextLine();
@@ -56,11 +57,21 @@ public class Authentication
 
     static void changeInfo(User currentUser)
     {
-        System.out.println("-------------------------------------------------------------");
-        System.out.println("Change Info: ");
-        System.out.println("1. Update username\n2. Update password");
-        System.out.print(ConsoleColors.PURPLE + "Enter your choice: " + ConsoleColors.RESET);
-        int choice = input.nextInt();
+        System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
+        int choice;
+        try
+        {
+            System.out.println("Change Info: ");
+            System.out.println("1. Update username\n2. Update password");
+            System.out.print(ConsoleColors.PURPLE + "Enter your choice: " + ConsoleColors.RESET);
+            choice = input.nextInt();
+        }
+        catch (InputMismatchException e)
+        {
+            System.out.println(ConsoleColors.RED + "Please Enter a Number!" + ConsoleColors.RESET);
+            input.nextLine();
+            return;
+        }
         input.nextLine();
         if (choice == 1)
         {

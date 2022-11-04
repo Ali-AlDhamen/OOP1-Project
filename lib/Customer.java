@@ -1,5 +1,6 @@
 package lib;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Customer extends User
@@ -42,27 +43,59 @@ public class Customer extends User
 
     void order()
     {
-        System.out.println("-------------------------------------------------------------");
+        System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Order: ");
         Restaurant.displayMenu();
-        System.out.print("Enter the number of dishes you want to order: ");
-        int numberOfDishes = input.nextInt();
+        int numberOfDishes, dishNumber, quantity;
+        try
+        {
+            System.out.print("Enter the number of dishes you want to order: ");
+            numberOfDishes = input.nextInt();
+        }
+        catch (InputMismatchException e)
+        {
+            System.out.println(ConsoleColors.RED + "Please Enter a Number!" + ConsoleColors.RESET);
+            input.nextLine();
+            return;
+        }
         input.nextLine();
         Order order = new Order(this.getId());
         for (int i = 0; i < numberOfDishes; i++)
         {
-            System.out.print("Enter the number of the dish: ");
-            int dishNumber = input.nextInt();
+            try
+            {
+                System.out.print("Enter the number of the dish: ");
+                dishNumber = input.nextInt();
+            }
+            catch (InputMismatchException e)
+            {
+                System.out.println(ConsoleColors.RED + "Please Enter a Number!" + ConsoleColors.RESET);
+                input.nextLine();
+                i--;
+                continue;
+            }
+
             if (dishNumber > Restaurant.menu.size())
             {
                 System.out.println(ConsoleColors.RED + "Invalid dish number" + ConsoleColors.RESET);
                 i--;
                 continue;
             }
+            input.nextLine();
             String dishName = Restaurant.menu.get(dishNumber - 1).getName();
             double dishPrice = Restaurant.menu.get(dishNumber - 1).getPrice();
-            System.out.print("Enter the quantity of " + dishName + ": ");
-            int quantity = input.nextInt();
+            try
+            {
+                System.out.print("Enter the quantity of " + dishName + ": ");
+                quantity = input.nextInt();
+            }
+            catch (InputMismatchException e)
+            {
+                System.out.println(ConsoleColors.RED + "Please Enter a Number!" + ConsoleColors.RESET);
+                input.nextLine();
+                i--;
+                continue;
+            }
             if (quantity < 0)
             {
                 System.out.println(ConsoleColors.RED + "Invalid quantity" + ConsoleColors.RESET);

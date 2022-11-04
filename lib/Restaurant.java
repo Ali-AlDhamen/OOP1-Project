@@ -11,7 +11,7 @@ public class Restaurant
     static ArrayList<MenuItem> menu = new ArrayList<MenuItem>();
     static ArrayList<Order> orders = new ArrayList<Order>();
 
-    static void displayMenu()
+    public static void displayMenu()
     {
         if (menu.size() == 0)
         {
@@ -33,7 +33,7 @@ public class Restaurant
         System.out.println("--------------------------------");
     }
 
-    static void displayOrders()
+    public static void displayOrders()
     {
         if (orders.size() == 0)
         {
@@ -73,7 +73,7 @@ public class Restaurant
 
     }
 
-    static void sortOrders(ArrayList<Order> orders)
+    public static void sortOrders(ArrayList<Order> orders)
     {
         for (int i = 0; i < orders.size(); i++)
         {
@@ -90,7 +90,7 @@ public class Restaurant
 
     }
 
-    static void displayCustomers()
+    public static void displayCustomers()
     {
         if (Main.customers.size() == 0)
         {
@@ -116,7 +116,7 @@ public class Restaurant
         System.out.println("-------------------------------------------------------");
     }
 
-    static void setTestMenu()
+    public static void setTestMenu()
     {
         menu.add(new MenuItem("Pizza", 10.0));
         menu.add(new MenuItem("Burger", 5.0));
