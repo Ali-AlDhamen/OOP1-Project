@@ -9,7 +9,7 @@ public class Sys
 
     static public void runApp()
     {
-        Audio.playAudio("/Users/alidhamen/CS321/data/backGroundMusic.wav");
+        Audio.playAudio("data/AOT.wav");
         Database.getAccounts();
         Database.getIdNumbers();
         Database.getMenu();
