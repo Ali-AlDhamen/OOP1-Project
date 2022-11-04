@@ -141,6 +141,8 @@ public class Customer extends User
                     System.out.printf("| %s | %s | %s | %s |\n", dishName, unitPrice, unitQuantity, lineTotal);
                     System.out.println("-------------------------------------------------------");
                 }
+                System.out.println("| Total: " + order.getTotal() + "$                                        |");
+                System.out.println("-------------------------------------------------------");
             }
         }
     }
