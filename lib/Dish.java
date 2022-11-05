@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Dish implements Serializable
 {
+    private static final long serialVersionUID = 202L;
     private double dishPrice;
     private String dishName;
     private int dishAmount;

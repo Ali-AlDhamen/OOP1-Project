@@ -4,6 +4,7 @@ import java.io.*;
 
 abstract public class User implements Serializable
 {
+    private static final long serialVersionUID = 200L;
     public static int idNumber = 1;
     private String id;
     private String username;

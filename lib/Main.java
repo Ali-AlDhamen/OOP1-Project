@@ -15,6 +15,7 @@ public class Main
     {
 
         Sys.runApp();
+
         do
         {
             int inputChoice;

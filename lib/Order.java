@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class Order implements Serializable
 {
+    private static final long serialVersionUID = 203L;
     private String customerId;
     private String orderId;
     private Date orderDate;

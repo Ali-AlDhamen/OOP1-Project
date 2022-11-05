@@ -116,10 +116,19 @@ public class Restaurant
         System.out.println("-------------------------------------------------------");
     }
 
+    public static void testMenu()
+    {
+        menu.add(new MenuItem("Pizza", 10));
+        menu.add(new MenuItem("Burger", 5));
+        menu.add(new MenuItem("Fries", 3));
+        menu.add(new MenuItem("Coke", 2));
+    }
+
 }
 
 class MenuItem implements Serializable
 {
+    private static final long serialVersionUID = 201L;
     private double Price;
     private String Name;
 
