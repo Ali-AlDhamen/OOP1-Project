@@ -5,11 +5,11 @@ import java.util.ArrayList;
 
 public class Restaurant
 {
-    static String restaurantName = "Restaurant";
-    static int numberOfOrders = 0;
-    static int numberOfCustomers = 0;
-    static ArrayList<MenuItem> menu = new ArrayList<MenuItem>();
-    static ArrayList<Order> orders = new ArrayList<Order>();
+    public static String restaurantName = "Restaurant";
+    public static int numberOfOrders = 0;
+    public static int numberOfCustomers = 0;
+    public static ArrayList<MenuItem> menu = new ArrayList<MenuItem>();
+    public static ArrayList<Order> orders = new ArrayList<Order>();
 
     public static void displayMenu()
     {
@@ -114,14 +114,6 @@ public class Restaurant
         }
 
         System.out.println("-------------------------------------------------------");
-    }
-
-    public static void setTestMenu()
-    {
-        menu.add(new MenuItem("Pizza", 10.0));
-        menu.add(new MenuItem("Burger", 5.0));
-        menu.add(new MenuItem("Fries", 2.0));
-        menu.add(new MenuItem("Coke", 1.0));
     }
 
 }

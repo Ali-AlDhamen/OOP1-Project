@@ -10,8 +10,8 @@ public class Order implements Serializable
     private String orderId;
     private Date orderDate;
     private double total;
-    static int idNumber = 1;
-    ArrayList<Dish> Cart;
+    public static int idNumber = 1;
+    public ArrayList<Dish> Cart;
 
     public String getCustomerId()
     {

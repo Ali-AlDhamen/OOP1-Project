@@ -4,7 +4,7 @@ import java.io.*;
 
 abstract public class User implements Serializable
 {
-    static int idNumber = 1;
+    public static int idNumber = 1;
     private String id;
     private String username;
     private String password;

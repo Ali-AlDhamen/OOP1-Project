@@ -6,11 +6,10 @@ import java.util.Scanner;
 
 public class Main
 {
-    static ArrayList<Customer> customers = new ArrayList<>();
-    static ArrayList<User> allUsers = new ArrayList<User>();
-    static Scanner input = new Scanner(System.in);
-    static User admin = new Admin("admin", "admin12345");
-    static User currentUser = null;
+    public static ArrayList<Customer> customers = new ArrayList<>();
+    public static ArrayList<User> allUsers = new ArrayList<User>();
+    public static Scanner input = new Scanner(System.in);
+    public static User currentUser = null;
 
     public static void main(String[] args)
     {
