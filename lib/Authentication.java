@@ -1,11 +1,13 @@
 package lib;
 
+import java.io.Console;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Authentication
 {
     static Scanner input = new Scanner(System.in);
+    static Console console = System.console();
 
     static void createAccount()
     {
@@ -22,7 +24,8 @@ public class Authentication
             }
         }
         System.out.print("Enter password: ");
-        String password = input.nextLine();
+        char[] hiddenPassword = console.readPassword();
+        String password = new String(hiddenPassword);
         System.out.print("Enter your full name: ");
         String name = input.nextLine();
         Customer customer = new Customer(username, password, name);
@@ -41,7 +44,9 @@ public class Authentication
         System.out.print("Enter username: ");
         String username = input.nextLine();
         System.out.print("Enter password: ");
-        String password = input.nextLine();
+        char[] hiddenPassword = console.readPassword();
+        String password = new String(hiddenPassword);
+
         for (User user : Main.allUsers)
         {
             if (user.getUsername().equals(username) && user.getPassword().equals(password))
@@ -91,7 +96,8 @@ public class Authentication
         else if (choice == 2)
         {
             System.out.print("Enter new password: ");
-            String password = input.nextLine();
+            char[] hiddenPassword = console.readPassword();
+            String password = new String(hiddenPassword);
             Main.currentUser.setPassword(password);
             System.out.println(ConsoleColors.GREEN + "Password updated successfully" + ConsoleColors.RESET);
         }

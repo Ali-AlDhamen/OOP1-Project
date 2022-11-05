@@ -78,7 +78,7 @@ public class Sys
             try
             {
                 System.out.println(
-                        "1. Add Food\n2. Remove Food\n3. Update Food\n4. Update information\n5. Update Restaurant Name\n6. View Orders\n7. View Customers\n8. display menu\n9. Account Info\n10. Updated Profile\n11. Logout");
+                        "1. Add Food\n2. Remove Food\n3. Update Food\n4. Update Profile\n5. Update Restaurant Name\n6. View Orders\n7. View Customers\n8. Display menu\n9. Account Info\n10. Logout");
                 System.out.print(ConsoleColors.PURPLE + "Enter your choice: " + ConsoleColors.RESET);
                 choice = input.nextInt();
             }
@@ -119,9 +119,6 @@ public class Sys
                     ((Admin) Main.currentUser).accountInfo();
                     break;
                 case 10:
-                    Authentication.changeInfo(Main.currentUser);
-                    break;
-                case 11:
                     Main.currentUser = null;
                     System.out.println(ConsoleColors.GREEN + "Logged out successfully" + ConsoleColors.RESET);
                     return;
