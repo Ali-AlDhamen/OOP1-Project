@@ -9,7 +9,7 @@ public class Authentication
     static Scanner input = new Scanner(System.in);
     static Console console = System.console();
 
-    static void createAccount()
+    public static void createAccount()
     {
         System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Create Account: ");
@@ -37,7 +37,7 @@ public class Authentication
         System.out.println(ConsoleColors.GREEN + "Account created successfully" + ConsoleColors.RESET);
     }
 
-    static void login()
+    public static void login()
     {
         System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Login: ");
@@ -60,7 +60,7 @@ public class Authentication
         System.out.println(ConsoleColors.RED + "Invalid username or password" + ConsoleColors.RESET);
     }
 
-    static void changeInfo(User currentUser)
+    public static void changeInfo(User currentUser)
     {
         System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         int choice;

@@ -7,7 +7,7 @@ public class Sys
 {
     static Scanner input = new Scanner(System.in);
 
-    static public void runApp()
+    public static void runApp()
     {
         Audio.playAudio("data/AOT.wav");
         Database.getAccounts();
@@ -23,7 +23,7 @@ public class Sys
         }
     }
 
-    static public void customerSystem()
+    public static void customerSystem()
     {
 
         System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
@@ -68,7 +68,7 @@ public class Sys
 
     }
 
-    static public void adminSystem()
+    public static void adminSystem()
     {
         System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Welcome to the admin system!");

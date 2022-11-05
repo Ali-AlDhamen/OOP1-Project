@@ -39,20 +39,20 @@ abstract public class User implements Serializable
         this.password = password;
     }
 
-    User(String username, String password)
+    public User(String username, String password)
     {
         this.username = username;
         this.password = password;
         generateId();
     }
 
-    void generateId()
+    public void generateId()
     {
         this.id = String.valueOf(idNumber);
         idNumber += 1;
     }
 
-    void accountInfo()
+    public void accountInfo()
     {
         System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Account Info: ");

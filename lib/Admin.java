@@ -7,12 +7,12 @@ public class Admin extends User
 {
     static Scanner input = new Scanner(System.in);
 
-    Admin(String username, String password)
+    public Admin(String username, String password)
     {
         super(username, password);
     }
 
-    void addNewDish()
+    public void addNewDish()
     {
         System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.print("Enter Dish name: ");
@@ -50,7 +50,7 @@ public class Admin extends User
 
     }
 
-    void updateDish()
+    public void updateDish()
     {
         System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Update Dish: ");
@@ -126,7 +126,7 @@ public class Admin extends User
 
     }
 
-    void removeDish()
+    public void removeDish()
     {
         System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Delete Dish: ");
@@ -146,7 +146,7 @@ public class Admin extends User
 
     }
 
-    void changeRestaurantName()
+    public void changeRestaurantName()
     {
         System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.print("Enter new name: ");

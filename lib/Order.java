@@ -53,7 +53,7 @@ public class Order implements Serializable
         this.total = total;
     }
 
-    Order(String customerId)
+    public Order(String customerId)
     {
         this.customerId = customerId;
         this.orderDate = new Date();
@@ -62,7 +62,7 @@ public class Order implements Serializable
         Restaurant.numberOfOrders++;
     }
 
-    void generateId()
+    public void generateId()
     {
         this.orderId = String.valueOf(idNumber);
         idNumber += 1;

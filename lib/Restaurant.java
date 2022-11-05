@@ -151,7 +151,7 @@ class MenuItem implements Serializable
         Name = name;
     }
 
-    MenuItem(String Name, double Price)
+    public MenuItem(String Name, double Price)
     {
         this.Name = Name;
         this.Price = Price;

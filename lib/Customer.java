@@ -35,13 +35,13 @@ public class Customer extends User
         return numberOfOrders;
     }
 
-    Customer(String username, String password, String name)
+    public Customer(String username, String password, String name)
     {
         super(username, password);
         this.name = name;
     }
 
-    void order()
+    public void order()
     {
         System.out.println(ConsoleColors.BLUE + "-------------------------------------------------------------" + ConsoleColors.RESET);
         System.out.println("Order: ");
@@ -115,7 +115,7 @@ public class Customer extends User
         Bill.displayBill(order);
     }
 
-    void displayMyOrders()
+    public void displayMyOrders()
     {
         if (this.totalSpent == 0)
         {
