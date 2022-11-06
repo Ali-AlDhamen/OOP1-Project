@@ -40,7 +40,7 @@ public class Admin extends User
         {
             if (item.getName().equals(dish.getName()))
             {
-                System.out.println("Dish already exists");
+                System.out.println(ConsoleColors.RED + "Dish already exists" + ConsoleColors.RESET);
                 return;
             }
         }
@@ -76,6 +76,14 @@ public class Admin extends User
         {
             System.out.print("Enter new name: ");
             String newName = input.nextLine();
+            for (MenuItem item : Restaurant.menu)
+            {
+                if (item.getName().equals(newName))
+                {
+                    System.out.println(ConsoleColors.RED + "Can`t have two dishes of same name in menu" + ConsoleColors.RESET);
+                    return;
+                }
+            }
             for (MenuItem item : Restaurant.menu)
             {
                 if (item.getName().equals(name))

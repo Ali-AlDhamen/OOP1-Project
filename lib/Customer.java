@@ -39,6 +39,7 @@ public class Customer extends User
     {
         super(username, password);
         this.name = name;
+        Restaurant.numberOfCustomers++;
     }
 
     public void order()

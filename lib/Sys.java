@@ -9,7 +9,7 @@ public class Sys
 
     public static void runApp()
     {
-        Audio.playAudio("data/AOT.wav");
+        // Audio.playAudio("data/AOT.wav");
         Database.getAccounts();
         Database.getIdNumbers();
         Database.getMenu();
